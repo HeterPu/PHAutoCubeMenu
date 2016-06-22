@@ -166,6 +166,7 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
 }
 
 
+
 -(CubeView *)cubeViewMakerWith:(CGRect)rect title:(NSString *)title  andImageName:(NSString *)name {
     
     CubeView *cube = [CubeView instanceCubeView];
