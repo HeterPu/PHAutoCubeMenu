@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<string>title1</string>
+		<string>title2</string>
+		<string>title3</string>
+		<string>title4</string>
+		<string>title5</string>
+		<string>title6</string>
+		<string>title7</string>
+		<string>title8</string>
+		<string>title9</string>
+	</array>
+	<array>
+		<string>HJ_zhibo</string>
+		<string>HJ_neican</string>
+		<string>HJ_huati</string>
+		<string>HJ_hudong</string>
+		<string>HJ_guandian</string>
+		<string>HJ_wenzhang</string>
+		<string>HJ_zuhe1</string>
+		<string>HJ_zixuangu</string>
+		<string>HJ_wenda</string>
+	</array>
+</array>
+</plist>
