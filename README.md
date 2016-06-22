@@ -1,3 +1,7 @@
+# PHAutoCubeMenu
+A very useful manual layout cube menu. you can drag view to the position you want and response smoothly animation.
+
+
 * [CubeView](https://github.com/HeterPu/PHStockChart) — A View can be draged and lots of delegte to call touch events and tap events.
 * [SumCubeView](https://github.com/HeterPu/PHStockChart) — A Collection of CubeView for sorting and animation.
 
@@ -44,5 +48,4 @@ PHStockChart is provided under the MIT license. See LICENSE file for details.
 
 
 
-# PHAutoCubeMenu
-A very useful manual layout cube menu. you can drag view to the position you want and response smoothly animation.
+
