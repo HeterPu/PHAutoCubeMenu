@@ -10,8 +10,8 @@ Demo Project
 ==============
 See `PHAutoCubeMenu.xcodeproj`
 
-<img src="https://raw.github.com/HeterPu/PHStockChart/master/demo/snapshot/cubeview.png" width="760"><br/>
-<img src="https://raw.github.com/HeterPu/PHStockChart/master/demo/snapshot/sumcubeview.png" width="760">
+<img src="https://raw.github.com/HeterPu/PHStockChart/master/demo/cubeview.png" width="760"><br/>
+<img src="https://raw.github.com/HeterPu/PHStockChart/master/demo/sumcubeview.png" width="760">
 
 
 Installation
