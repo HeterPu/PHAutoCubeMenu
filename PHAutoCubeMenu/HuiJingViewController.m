@@ -238,7 +238,7 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
     }
 
     
-    
+
     
     
     [UIView animateWithDuration:0.7 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:20 options:UIViewAnimationOptionCurveEaseOut animations:^{
