@@ -17,12 +17,10 @@
 
 @property(nonatomic,strong)NSMutableArray *cubeViewArray;
 
-
 @end
 
 
 @implementation SumCubeView
-
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -33,13 +31,13 @@
     return self;
 }
 
-
-
 -(NSArray *)titleImageArray {
     NSMutableArray *titleimagearray = [NSMutableArray array];
-
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CubeMenu" ofType:@"plist"];
-    titleimagearray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+    NSArray *arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *strDocBase = ([arrPaths count] > 0) ? [arrPaths objectAtIndex:0] : nil;
+    NSString *filepath = [strDocBase stringByAppendingPathComponent:@"CubeMenu.plist"];
+    titleimagearray = [[NSMutableArray alloc] initWithContentsOfFile:filepath];
     _titleImageArray = titleimagearray;
     return _titleImageArray;
 }
@@ -67,31 +65,31 @@
 
 
 
--(CubeView *)cubeViewMakerWith:(CGRect)rect title:(NSString *)title  andImageName:(NSString *)name {
+-(CubeView *)cubeViewMakerWith:(CGRect)rect
+                         title:(NSString *)title
+                  andImageName:(NSString *)name {
     
     CubeView *cube = [CubeView instanceCubeView];
     cube.frame = rect;
     [cube setTitle:title andImageName:name];
-    
     return cube;
 }
 
 
 
--(void)touchesMoved:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesMoved:(NSSet<UITouch *> *)touches
+          withEvent:(UIEvent *)event {
     
     NSLog(@"move began");
-    
 }
 
 
 #pragma mark - CubeViewClickDelegate
 
--(void)cubeTouchBeganWith:(CubeView *)cube andPosition:(CGPoint)point {
+-(void)cubeTouchBeganWith:(CubeView *)cube
+              andPosition:(CGPoint)point {
     
     NSLog(@"the cube touch began tag is %li and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
-    
-    
 }
 
 -(void)cubeTouchMoveWith:(CubeView *)cube andPosition:(CGPoint)point {
@@ -107,19 +105,17 @@
     if (from != to) {
         [self setNewTagByCubeMovingFrom:from to:to];
     }
-
-
 }
 
 
--(void)cubeTouchEndWith:(CubeView *)cube andPosition:(CGPoint)point {
+-(void)cubeTouchEndWith:(CubeView *)cube
+            andPosition:(CGPoint)point {
     
     _selectedCube.tag = _to + 1;
     [_cubeViewArray removeObjectAtIndex:_from];
     [_cubeViewArray insertObject:_selectedCube atIndex:_to];
      NSLog(@"tag is %ldi and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
     [self excuteAnimationFrom:_selectedCube with:0.5];
-    
     
     NSLog(@"from value is %i",_from);
     NSLog(@"from value is %i",_to);
@@ -130,12 +126,10 @@
 //    {
 //         [self setNewTagByCubeMovingFrom:_from to:_to];
 //    }
-
 }
 
 
 #pragma mark - Accesories
-
 
 -(CGPoint)getPositionFromTag:(NSInteger)tag {
     
@@ -158,7 +152,8 @@
 
 
 
--(void)setNewTagByCubeMovingFrom:(NSInteger)from to:(NSInteger)to  {
+-(void)setNewTagByCubeMovingFrom:(NSInteger)from
+                              to:(NSInteger)to  {
     
     if (to > from) {
        
@@ -187,7 +182,8 @@
 }
 
 
--(void)excuteAnimationFrom:(CubeView *)cube with:(CGFloat)duration{
+-(void)excuteAnimationFrom:(CubeView *)cube
+                      with:(CGFloat)duration{
     CGPoint centerPoint = [self getPositionFromTag:(cube.tag - 1)];
     [UIView animateWithDuration:duration animations:^{
         cube.center = centerPoint;
@@ -198,7 +194,10 @@
 
 -(void)saveChangeToPlist {
     
-    NSString *filepath = [[NSBundle mainBundle] pathForResource:@"CubeMenu" ofType:@"plist"];
+    NSArray *arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *strDocBase = ([arrPaths count] > 0) ? [arrPaths objectAtIndex:0] : nil;
+    
+    NSString *filepath = [strDocBase stringByAppendingPathComponent:@"CubeMenu.plist"];
     NSMutableArray *plistarray = [[NSMutableArray alloc] initWithContentsOfFile:filepath];
     NSLog(@"filepathstrinf is %@",filepath) ;
     NSMutableArray *titlearray = [NSMutableArray array];
@@ -214,8 +213,7 @@
     [plistarray replaceObjectAtIndex:1 withObject:iconarray];
     
     [plistarray writeToFile:filepath atomically:YES];
-    
-    
+
 }
 
 

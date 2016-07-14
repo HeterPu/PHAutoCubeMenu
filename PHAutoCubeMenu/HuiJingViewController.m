@@ -11,7 +11,6 @@
 #import "SumCubeView.h"
 #import "UIDevice+ScreenType.h"
 
-
 #define screenB [UIScreen mainScreen].bounds
 #define color(r,g,b,a)   [UIColor colorWithRed: ( r / 255.0) green:( g / 255.0) blue:( b / 255.0) alpha:( a / 1.0)]
 
@@ -33,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"惠金";
+    self.title = @"huijin";
     self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
     self.navigationController.navigationBar.barTintColor = color(237, 77, 38, 1);
     [self settingScrollView];
@@ -50,21 +49,21 @@
     scrollview.contentSize = CGSizeMake(0, 600);
     scrollview.showsVerticalScrollIndicator = NO;
 
-    
     self.scrollV = scrollview;
     [self.view addSubview:scrollview];
     [self setConponent];
-   
-    
 }
 
 
 
 -(NSArray *)titleImageArray {
+    
     NSMutableArray *titleimagearray = [NSMutableArray array];
-
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"CubeMenu" ofType:@"plist"];
-    titleimagearray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+    NSArray *arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *strDocBase = ([arrPaths count] > 0) ? [arrPaths objectAtIndex:0] : nil;
+    NSString *filepath = [strDocBase stringByAppendingPathComponent:@"CubeMenu.plist"];
+    titleimagearray = [[NSMutableArray alloc] initWithContentsOfFile:filepath];
     _titleImageArray = titleimagearray;
     return _titleImageArray;
 }
@@ -79,7 +78,6 @@
     UIView *middle = [[UIView alloc] initWithFrame:CGRectMake(0, 56, screenB.size.width, 80)];
     middle.backgroundColor = [UIColor whiteColor];
     
-    
     UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
     UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
     UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -92,13 +90,11 @@
     button2.center = CGPointMake(screenB.size.width / 6 * 3, 30);
     button3.center = CGPointMake(screenB.size.width / 6 * 5, 30);
 
-
     [button1 setImage:[UIImage imageNamed: @"HJ_tougu"] forState:UIControlStateNormal];
 
     [button2 setImage:[UIImage imageNamed: @"HJ_daniu"] forState:UIControlStateNormal];
     
     [button3 setImage:[UIImage imageNamed: @"HJ_daniu"] forState:UIControlStateNormal];
-    
     
     UILabel *label1 = [[UILabel alloc] init];
     UILabel *label2 = [[UILabel alloc] init];
@@ -124,30 +120,24 @@
     label2.font = [UIFont systemFontOfSize:13];
     label3.font = [UIFont systemFontOfSize:13];
     
-    
     UIView *fenge1 = [[UIView alloc] initWithFrame:CGRectMake(screenB.size.width / 3, 10, 0.5, 63)];
     UIView *fenge2 = [[UIView alloc] initWithFrame:CGRectMake(screenB.size.width / 3 * 2, 10, 0.5, 63)];
     fenge1.backgroundColor = color(200, 200, 200, 1);
     fenge2.backgroundColor = color(200, 200, 200, 1);
 
-    
     [middle addSubview:button1];
     [middle addSubview:button2];
     [middle addSubview:button3];
 
-    
     [middle addSubview:label1];
     [middle addSubview:label2];
     [middle addSubview:label3];
 
-    
     [middle addSubview:fenge1];
     [middle addSubview:fenge2];
     
 CGFloat cubepadding = 1;
 CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
-
-    
 
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {
@@ -160,7 +150,6 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
         }
     }
     
-    
 //    [self.scrollV addSubview:header];
     [self.scrollV addSubview:middle];
 }
@@ -172,7 +161,6 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
     CubeView *cube = [CubeView instanceCubeView];
     cube.frame = rect;
     [cube setTitle:title andImageName:name];
-    
     return cube;
 }
 
@@ -214,8 +202,6 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
     [self.view addSubview:okbutton];
         [okbutton addTarget:self action:@selector(okButtonClick:) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    
     switch ([UIDevice getScreenType]) {
         case ScreenType320x480:
             sumcube.frame = CGRectMake(0, 30, screenB.size.width, screenB.size.width);
@@ -235,12 +221,7 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
             break;
         default:
             break;
-    }
-
-    
-
-    
-    
+      }
     [UIView animateWithDuration:0.7 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:20 options:UIViewAnimationOptionCurveEaseOut animations:^{
         okbutton.alpha = 1;
         sumcube.alpha = 1;
@@ -248,8 +229,6 @@ CGFloat cubewidth = (screenB.size.width - 2 * cubepadding) / 3;
     } completion:^(BOOL finished) {
         [sumcube setCubeView];
     }];
-    
-
 }
 
 

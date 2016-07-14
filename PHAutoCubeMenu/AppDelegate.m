@@ -15,8 +15,28 @@
 @implementation AppDelegate
 
 
+
+-(void)setConfiguration {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"CubeMenu" ofType:@"plist"];
+    NSArray *titleimagearray = [NSArray array];
+    titleimagearray = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+    
+    NSArray *arrPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *strDocBase = ([arrPaths count] > 0) ? [arrPaths objectAtIndex:0] : nil;
+    NSString *filepath = [strDocBase stringByAppendingPathComponent:@"CubeMenu.plist"];
+    
+    NSLog(@"filepathstrinf is %@",filepath) ;
+    
+    [titleimagearray writeToFile:filepath atomically:YES];
+}
+
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [self setConfiguration];
     return YES;
 }
 

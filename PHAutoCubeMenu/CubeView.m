@@ -11,15 +11,10 @@
 @interface CubeView()
 @property (weak, nonatomic) IBOutlet UIImageView *imageV;
 @property (weak, nonatomic) IBOutlet UILabel *nameL;
-
 @property (nonatomic,assign)CGPoint startPoint;
-
-
-
 @end
 
 @implementation CubeView
-
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -42,24 +37,21 @@
 }
 
 
-
-
 +(CubeView *)instanceCubeView {
     
-    NSArray *nibView = [[NSBundle mainBundle] loadNibNamed:@"CubeView" owner:nil options:nil];
+    NSArray *nibView = [[NSBundle mainBundle]
+                        loadNibNamed:@"CubeView" owner:nil options:nil];
     return [nibView objectAtIndex:0];
 }
 
-
-
--(void)setTitle:(NSString *)title andImageName:(NSString *)name {
+-(void)setTitle:(NSString *)title
+   andImageName:(NSString *)name {
     
     _nameL.text = title;
     _imageV.image = [UIImage imageNamed:name];
     _iconName = name;
     _labelName = title;
 }
-
 
 
 -(void)cubeViewClick {
@@ -85,10 +77,8 @@
     if ([self.delegate2 respondsToSelector:@selector(longPressEvent:)]) {
         [self.delegate2 longPressEvent:self];
     }
-        
   }
 }
-
 
 
 -(void)cubeViewSingleClick {
@@ -99,7 +89,6 @@
 }
 
 
-
 -(void)cubeViewDoubleClick {
     
     if ([self.delegate2 respondsToSelector:@selector(doubleTapEvent:)]) {
@@ -108,10 +97,9 @@
 }
 
 
-
 //触摸事件
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
+- (void) touchesBegan:(NSSet *)touches
+            withEvent:(UIEvent *)event{
     //保存触摸起始点位置
     CGPoint point = [[touches anyObject] locationInView:self];
     _startPoint = point;
@@ -126,12 +114,11 @@
     }
 }
 
--(void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{
+-(void) touchesMoved:(NSSet *)touches
+           withEvent:(UIEvent *)event{
     
-    if (_isRDragble == YES) {
+    if (self.isRDragble == YES) {
         
-   
     //计算位移=当前位置-起始位置
     CGPoint point = [[touches anyObject] locationInView:self];
     float dx = point.x - _startPoint.x;
@@ -139,7 +126,6 @@
     
     //计算移动后的view中心点
     CGPoint newcenter = CGPointMake(self.center.x + dx, self.center.y + dy);
-    
     
     /* 限制用户不可将视图托出屏幕 */
     float halfx = CGRectGetMidX(self.bounds);
@@ -153,22 +139,20 @@
     newcenter.y = MAX(halfy, newcenter.y);
     newcenter.y = MIN(self.superview.bounds.size.height - halfy, newcenter.y);
     
-   
         //移动view
     self.center = newcenter;
     
-
     NSLog(@"horizon%f",newcenter.x);
     NSLog(@"vertical%f",newcenter.y);
     if ([self.delegate1 respondsToSelector:@selector(cubeTouchMoveWith:andPosition:)]) {
         [self.delegate1 cubeTouchMoveWith:self andPosition:newcenter];
     }
-        
-    };
+  };
 }
 
 
--(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+-(void)touchesEnded:(NSSet<UITouch *> *)touches
+          withEvent:(UIEvent *)event {
     //保存触摸起始点位置
     CGPoint point = [[touches anyObject] locationInView:self.superview];
     
@@ -182,12 +166,18 @@
     [UIView animateWithDuration:0.6 delay:0.4 usingSpringWithDamping:0.2 initialSpringVelocity:3 options:UIViewAnimationOptionCurveEaseOut  animations:^{
         self.transform =  CGAffineTransformMakeScale(0.9, 0.9);
     } completion:^(BOOL finished) {
-        
+    
     }];
 }
 
 
 
+-(BOOL)isRDragble {
+    if (!_isRDragble) {
+        _isRDragble = NO;
+    }
+    return _isRDragble;
+}
 
 
 
