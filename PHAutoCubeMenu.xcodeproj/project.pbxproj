@@ -12,13 +12,13 @@
 		D094F2E61D1A59030049DAA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D094F2E41D1A59030049DAA7 /* Main.storyboard */; };
 		D094F2E81D1A59030049DAA7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D094F2E71D1A59030049DAA7 /* Assets.xcassets */; };
 		D094F2EB1D1A59030049DAA7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D094F2E91D1A59030049DAA7 /* LaunchScreen.storyboard */; };
-		D094F2FB1D1A59530049DAA7 /* CubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D094F2F21D1A59530049DAA7 /* CubeView.xib */; };
-		D094F2FC1D1A59530049DAA7 /* CubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D094F2F41D1A59530049DAA7 /* CubeView.m */; };
-		D094F2FD1D1A59530049DAA7 /* SumCubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D094F2F61D1A59530049DAA7 /* SumCubeView.m */; };
 		D094F2FE1D1A59530049DAA7 /* HuiJinMessageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D094F2F81D1A59530049DAA7 /* HuiJinMessageView.m */; };
 		D094F2FF1D1A59530049DAA7 /* HuiJingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D094F2FA1D1A59530049DAA7 /* HuiJingViewController.m */; };
 		D094F3021D1A59D60049DAA7 /* UIDevice+ScreenType.m in Sources */ = {isa = PBXBuildFile; fileRef = D094F3011D1A59D60049DAA7 /* UIDevice+ScreenType.m */; };
 		D094F3041D1A5A450049DAA7 /* CubeMenu.plist in Resources */ = {isa = PBXBuildFile; fileRef = D094F3031D1A5A450049DAA7 /* CubeMenu.plist */; };
+		D0FFAD2D1D38C667001E7C4E /* CubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFAD291D38C667001E7C4E /* CubeView.m */; };
+		D0FFAD2E1D38C667001E7C4E /* CubeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0FFAD2A1D38C667001E7C4E /* CubeView.xib */; };
+		D0FFAD2F1D38C667001E7C4E /* SumCubeView.m in Sources */ = {isa = PBXBuildFile; fileRef = D0FFAD2C1D38C667001E7C4E /* SumCubeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,11 +30,6 @@
 		D094F2E71D1A59030049DAA7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D094F2EA1D1A59030049DAA7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D094F2EC1D1A59030049DAA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D094F2F21D1A59530049DAA7 /* CubeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CubeView.xib; sourceTree = "<group>"; };
-		D094F2F31D1A59530049DAA7 /* CubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeView.h; sourceTree = "<group>"; };
-		D094F2F41D1A59530049DAA7 /* CubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeView.m; sourceTree = "<group>"; };
-		D094F2F51D1A59530049DAA7 /* SumCubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumCubeView.h; sourceTree = "<group>"; };
-		D094F2F61D1A59530049DAA7 /* SumCubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumCubeView.m; sourceTree = "<group>"; };
 		D094F2F71D1A59530049DAA7 /* HuiJinMessageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuiJinMessageView.h; sourceTree = "<group>"; };
 		D094F2F81D1A59530049DAA7 /* HuiJinMessageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HuiJinMessageView.m; sourceTree = "<group>"; };
 		D094F2F91D1A59530049DAA7 /* HuiJingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HuiJingViewController.h; sourceTree = "<group>"; };
@@ -42,6 +37,11 @@
 		D094F3001D1A59D60049DAA7 /* UIDevice+ScreenType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIDevice+ScreenType.h"; sourceTree = "<group>"; };
 		D094F3011D1A59D60049DAA7 /* UIDevice+ScreenType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIDevice+ScreenType.m"; sourceTree = "<group>"; };
 		D094F3031D1A5A450049DAA7 /* CubeMenu.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = CubeMenu.plist; sourceTree = "<group>"; };
+		D0FFAD281D38C667001E7C4E /* CubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CubeView.h; sourceTree = "<group>"; };
+		D0FFAD291D38C667001E7C4E /* CubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CubeView.m; sourceTree = "<group>"; };
+		D0FFAD2A1D38C667001E7C4E /* CubeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CubeView.xib; sourceTree = "<group>"; };
+		D0FFAD2B1D38C667001E7C4E /* SumCubeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SumCubeView.h; sourceTree = "<group>"; };
+		D0FFAD2C1D38C667001E7C4E /* SumCubeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SumCubeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,14 +74,10 @@
 		D094F2DA1D1A59030049DAA7 /* PHAutoCubeMenu */ = {
 			isa = PBXGroup;
 			children = (
+				D0FFAD271D38C63C001E7C4E /* PHAutoCubeMenu */,
 				D094F3031D1A5A450049DAA7 /* CubeMenu.plist */,
 				D094F3001D1A59D60049DAA7 /* UIDevice+ScreenType.h */,
 				D094F3011D1A59D60049DAA7 /* UIDevice+ScreenType.m */,
-				D094F2F21D1A59530049DAA7 /* CubeView.xib */,
-				D094F2F31D1A59530049DAA7 /* CubeView.h */,
-				D094F2F41D1A59530049DAA7 /* CubeView.m */,
-				D094F2F51D1A59530049DAA7 /* SumCubeView.h */,
-				D094F2F61D1A59530049DAA7 /* SumCubeView.m */,
 				D094F2F71D1A59530049DAA7 /* HuiJinMessageView.h */,
 				D094F2F81D1A59530049DAA7 /* HuiJinMessageView.m */,
 				D094F2F91D1A59530049DAA7 /* HuiJingViewController.h */,
@@ -103,6 +99,18 @@
 				D094F2DC1D1A59030049DAA7 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0FFAD271D38C63C001E7C4E /* PHAutoCubeMenu */ = {
+			isa = PBXGroup;
+			children = (
+				D0FFAD281D38C667001E7C4E /* CubeView.h */,
+				D0FFAD291D38C667001E7C4E /* CubeView.m */,
+				D0FFAD2A1D38C667001E7C4E /* CubeView.xib */,
+				D0FFAD2B1D38C667001E7C4E /* SumCubeView.h */,
+				D0FFAD2C1D38C667001E7C4E /* SumCubeView.m */,
+			);
+			path = PHAutoCubeMenu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -162,10 +170,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0FFAD2E1D38C667001E7C4E /* CubeView.xib in Resources */,
 				D094F2EB1D1A59030049DAA7 /* LaunchScreen.storyboard in Resources */,
 				D094F2E81D1A59030049DAA7 /* Assets.xcassets in Resources */,
 				D094F2E61D1A59030049DAA7 /* Main.storyboard in Resources */,
-				D094F2FB1D1A59530049DAA7 /* CubeView.xib in Resources */,
 				D094F3041D1A5A450049DAA7 /* CubeMenu.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -179,10 +187,10 @@
 			files = (
 				D094F2E01D1A59030049DAA7 /* AppDelegate.m in Sources */,
 				D094F2FF1D1A59530049DAA7 /* HuiJingViewController.m in Sources */,
-				D094F2FD1D1A59530049DAA7 /* SumCubeView.m in Sources */,
 				D094F3021D1A59D60049DAA7 /* UIDevice+ScreenType.m in Sources */,
+				D0FFAD2F1D38C667001E7C4E /* SumCubeView.m in Sources */,
+				D0FFAD2D1D38C667001E7C4E /* CubeView.m in Sources */,
 				D094F2DD1D1A59030049DAA7 /* main.m in Sources */,
-				D094F2FC1D1A59530049DAA7 /* CubeView.m in Sources */,
 				D094F2FE1D1A59530049DAA7 /* HuiJinMessageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +340,7 @@
 				D094F2F11D1A59030049DAA7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
