@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PHAutoCubeMenu"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.platform     = :ios, '6.0'
   s.ios.deployment_target = '6.0'
   s.summary      = "A StockChartView on ios,which implement by swift. "
