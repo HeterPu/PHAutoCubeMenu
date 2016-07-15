@@ -89,12 +89,12 @@
 -(void)cubeTouchBeganWith:(CubeView *)cube
               andPosition:(CGPoint)point {
     
-    NSLog(@"the cube touch began tag is %li and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
+//    NSLog(@"the cube touch began tag is %li and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
 }
 
 -(void)cubeTouchMoveWith:(CubeView *)cube andPosition:(CGPoint)point {
     
-    NSLog(@"the cube move tag is %li and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
+//    NSLog(@"the cube move tag is %li and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
     NSInteger  from = cube.tag - 1;
     NSInteger  to = [self cheakMovePointArea:point];
     _from = from;
@@ -114,11 +114,11 @@
     _selectedCube.tag = _to + 1;
     [_cubeViewArray removeObjectAtIndex:_from];
     [_cubeViewArray insertObject:_selectedCube atIndex:_to];
-     NSLog(@"tag is %ldi and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
+//     NSLog(@"tag is %ldi and the touch positon is x = %f,y = %f",(long)cube.tag,point.x,point.y);
     [self excuteAnimationFrom:_selectedCube with:0.5];
     
-    NSLog(@"from value is %i",_from);
-    NSLog(@"from value is %i",_to);
+//    NSLog(@"from value is %li",(long)_from);
+//    NSLog(@"from value is %li",(long)_to);
 //    if ( _from == _to) {
 //        [self excuteAnimationFrom:cube with:0.5];
 //    }
@@ -146,7 +146,7 @@
     NSInteger i = point.x / self.frame.size.width * 3;
     NSInteger j = point.y / self.frame.size.width * 3;
     
-    NSLog(@"the area of cube  = %li",j * 3 + i);
+//    NSLog(@"the area of cube  = %li",j * 3 + i);
     return i + j * 3;
 }
 
